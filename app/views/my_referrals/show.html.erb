@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Currency referred by user:</b>
+  <%= @my_referral.currency_referred_by_user %>
+</p>
+
+<p>
+  <b>Currency referred user:</b>
+  <%= @my_referral.currency_referred_user %>
+</p>
+
+<p>
+  <b>Agreed referred by amount:</b>
+  <%= @my_referral.agreed_referred_by_amount %>
+</p>
+
+<p>
+  <b>Agreed referral amount:</b>
+  <%= @my_referral.agreed_referral_amount %>
+</p>
+
+<p>
+  <b>Expired:</b>
+  <%= @my_referral.expired %>
+</p>
+
+<p>
+  <b>Qualifying transaction amount:</b>
+  <%= @my_referral.qualifying_transaction_amount %>
+</p>
+
+<p>
+  <b>Qualifying transaction commission:</b>
+  <%= @my_referral.qualifying_transaction_commission %>
+</p>
+
+
+<%= link_to 'Edit', edit_my_referral_path(@my_referral) %> |
+<%= link_to 'Back', my_referrals_path %>

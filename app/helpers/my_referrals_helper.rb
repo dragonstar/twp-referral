@@ -1,0 +1,2 @@
+module MyReferralsHelper
+end

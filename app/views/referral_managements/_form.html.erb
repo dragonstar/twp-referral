@@ -1,0 +1,37 @@
+<%= form_for(@referral_management) do |f| %>
+  <% if @referral_management.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@referral_management.errors.count, "error") %> prohibited this referral_management from being saved:</h2>
+
+      <ul>
+      <% @referral_management.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :currency %><br />
+    <%= f.text_field :currency %>
+  </div>
+  <div class="field">
+    <%= f.label :referred_by_amount %><br />
+    <%= f.text_field :referred_by_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :referral_amount %><br />
+    <%= f.text_field :referral_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :start_amount %><br />
+    <%= f.text_field :start_amount %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

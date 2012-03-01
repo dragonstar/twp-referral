@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @referral_management.name %>
+</p>
+
+<p>
+  <b>Currency:</b>
+  <%= @referral_management.currency %>
+</p>
+
+<p>
+  <b>Referred by amount:</b>
+  <%= @referral_management.referred_by_amount %>
+</p>
+
+<p>
+  <b>Referral amount:</b>
+  <%= @referral_management.referral_amount %>
+</p>
+
+<p>
+  <b>Start amount:</b>
+  <%= @referral_management.start_amount %>
+</p>
+
+
+<%= link_to 'Edit', edit_referral_management_path(@referral_management) %> |
+<%= link_to 'Back', referral_managements_path %>

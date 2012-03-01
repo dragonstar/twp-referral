@@ -1,0 +1,31 @@
+<h1>Listing referral_managements</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Currency</th>
+    <th>Referred by amount</th>
+    <th>Referral amount</th>
+    <th>Start amount</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @referral_managements.each do |referral_management| %>
+  <tr>
+    <td><%= referral_management.name %></td>
+    <td><%= referral_management.currency %></td>
+    <td><%= referral_management.referred_by_amount %></td>
+    <td><%= referral_management.referral_amount %></td>
+    <td><%= referral_management.start_amount %></td>
+    <td><%= link_to 'Show', referral_management %></td>
+    <td><%= link_to 'Edit', edit_referral_management_path(referral_management) %></td>
+    <td><%= link_to 'Destroy', referral_management, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Referral management', new_referral_management_path %>

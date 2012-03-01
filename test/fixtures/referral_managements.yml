@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  currency: MyString
+  referred_by_amount: 9.99
+  referral_amount: 9.99
+  start_amount: 9.99
+
+two:
+  name: MyString
+  currency: MyString
+  referred_by_amount: 9.99
+  referral_amount: 9.99
+  start_amount: 9.99

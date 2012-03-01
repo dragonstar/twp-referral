@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  address: MyString
+  image_url: 
+  referred_by_user_id: 1
+  referred_users_id: 1
+  referral: 1
+
+two:
+  name: MyString
+  address: MyString
+  image_url: 
+  referred_by_user_id: 1
+  referred_users_id: 1
+  referral: 1

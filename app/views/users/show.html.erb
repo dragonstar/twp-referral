@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @user.address %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @user.image_url %>
+</p>
+
+<p>
+  <b>Your referral code:</b>
+  <%= @user.referral_code %>
+</p>
+
+<table>
+  <tr>
+    <th>Name | </th>
+    <th>Address | </th>
+  </tr>
+<b> YOUR REFERRED USERS </b>
+<% @user.referred_users.each do |user| %>
+  <tr>
+    <td><%= user.name %></td>
+    <td><%= user.address %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

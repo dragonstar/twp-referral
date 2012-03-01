@@ -1,0 +1,35 @@
+<h1>Listing my_referrals</h1>
+
+<table>
+  <tr>
+    <th>Currency referred by user</th>
+    <th>Currency referred user</th>
+    <th>Agreed referred by amount</th>
+    <th>Agreed referral amount</th>
+    <th>Expired</th>
+    <th>Qualifying transaction amount</th>
+    <th>Qualifying transaction commission</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @my_referrals.each do |my_referral| %>
+  <tr>
+    <td><%= my_referral.currency_referred_by_user %></td>
+    <td><%= my_referral.currency_referred_user %></td>
+    <td><%= my_referral.agreed_referred_by_amount %></td>
+    <td><%= my_referral.agreed_referral_amount %></td>
+    <td><%= my_referral.expired %></td>
+    <td><%= my_referral.qualifying_transaction_amount %></td>
+    <td><%= my_referral.qualifying_transaction_commission %></td>
+    <td><%= link_to 'Show', my_referral %></td>
+    <td><%= link_to 'Edit', edit_my_referral_path(my_referral) %></td>
+    <td><%= link_to 'Destroy', my_referral, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New My referral', new_my_referral_path %>

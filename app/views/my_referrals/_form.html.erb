@@ -1,0 +1,45 @@
+<%= form_for(@my_referral) do |f| %>
+  <% if @my_referral.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@my_referral.errors.count, "error") %> prohibited this my_referral from being saved:</h2>
+
+      <ul>
+      <% @my_referral.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :currency_referred_by_user %><br />
+    <%= f.text_field :currency_referred_by_user %>
+  </div>
+  <div class="field">
+    <%= f.label :currency_referred_user %><br />
+    <%= f.text_field :currency_referred_user %>
+  </div>
+  <div class="field">
+    <%= f.label :agreed_referred_by_amount %><br />
+    <%= f.text_field :agreed_referred_by_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :agreed_referral_amount %><br />
+    <%= f.text_field :agreed_referral_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :expired %><br />
+    <%= f.check_box :expired %>
+  </div>
+  <div class="field">
+    <%= f.label :qualifying_transaction_amount %><br />
+    <%= f.text_field :qualifying_transaction_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :qualifying_transaction_commission %><br />
+    <%= f.text_field :qualifying_transaction_commission %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

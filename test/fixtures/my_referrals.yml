@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  currency_referred_by_user: MyString
+  currency_referred_user: MyString
+  agreed_referred_by_amount: 9.99
+  agreed_referral_amount: 
+  expired: false
+  qualifying_transaction_amount: 9.99
+  qualifying_transaction_commission: 
+
+two:
+  currency_referred_by_user: MyString
+  currency_referred_user: MyString
+  agreed_referred_by_amount: 9.99
+  agreed_referral_amount: 
+  expired: false
+  qualifying_transaction_amount: 9.99
+  qualifying_transaction_commission: 
