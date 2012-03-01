@@ -44,11 +44,15 @@ class UsersController < ApplicationController
     @user.referral_code = generate_referral_code
     if !@user.referred_by_code.empty?
       @referred_by_user = User.find_by_referral_code(@user.referred_by_code)
-      @user.referred_by_user = @referred_by_user
-      @referred_by_user.referred_users << @user
-      @referred_by_user.save!
-      @my_referral = MyReferral.new(params[:currency_referred_user => "pounds"])
-      @user.my_referral = @my_referral
+      if !@referred_by_user.nil?
+        @user.referred_by_user = @referred_by_user
+        @referred_by_user.referred_users << @user
+        @referred_by_user.save!
+        #session[:return_to] ||= request.referer
+        #@a_referral = MyReferral.new
+        #redirect_to session[:return_to]
+        #@user = @a_referral
+      end
     end
     puts "i am  here"
     respond_to do |format|
