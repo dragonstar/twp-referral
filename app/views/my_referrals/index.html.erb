@@ -1,25 +1,39 @@
-<h1>Listing my_referrals</h1>
+<h1>Listing Referrals </h1>
+
+<h2>Use this page to in ADMIN to edit a referral object</h2>
+
 
 <table>
   <tr>
-    <th>Currency referred by user</th>
+    <th>Referred User</th>
     <th>Currency referred user</th>
-    <th>Agreed referred by amount</th>
     <th>Agreed referral amount</th>
+    <th> || </th>
+
+    <th>Referred by user</th>
+    <th>Currency referred by user</th>
+    <th>Agreed referred by amount</th>
+    <th> || </th>
+
     <th>Expired</th>
     <th>Qualifying transaction amount</th>
     <th>Qualifying transaction commission</th>
+
     <th></th>
     <th></th>
     <th></th>
   </tr>
 
 <% @my_referrals.each do |my_referral| %>
-  <tr>
-    <td><%= my_referral.currency_referred_by_user %></td>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+    <td><%= link_to my_referral.user.name, user_path(my_referral.user) %></td>
     <td><%= my_referral.currency_referred_user %></td>
-    <td><%= my_referral.agreed_referred_by_amount %></td>
     <td><%= my_referral.agreed_referral_amount %></td>
+    <td></td>
+    <td><%= link_to my_referral.user.referred_by_user.name, user_path(my_referral.user.referred_by_user) %></td>
+    <td><%= my_referral.currency_referred_by_user %></td>
+    <td><%= my_referral.agreed_referred_by_amount %></td>
+    <td></td>
     <td><%= my_referral.expired %></td>
     <td><%= my_referral.qualifying_transaction_amount %></td>
     <td><%= my_referral.qualifying_transaction_commission %></td>

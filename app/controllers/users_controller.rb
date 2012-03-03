@@ -48,10 +48,9 @@ class UsersController < ApplicationController
         @user.referred_by_user = @referred_by_user
         @referred_by_user.referred_users << @user
         @referred_by_user.save!
-        #session[:return_to] ||= request.referer
-        #@a_referral = MyReferral.new
-        #redirect_to session[:return_to]
-        #@user = @a_referral
+        @a_referral = MyReferral.new
+        puts "my referral  - "
+        @user.my_referral_object = @a_referral
       end
     end
     puts "i am  here"

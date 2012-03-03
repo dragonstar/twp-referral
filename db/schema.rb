@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120229210403) do
+ActiveRecord::Schema.define(:version => 20120303173209) do
 
   create_table "my_referrals", :force => true do |t|
     t.string   "currency_referred_by_user"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20120229210403) do
     t.decimal  "qualifying_transaction_commission", :precision => 8, :scale => 2
     t.datetime "created_at",                                                      :null => false
     t.datetime "updated_at",                                                      :null => false
+    t.integer  "user_id"
   end
 
   create_table "referral_managements", :force => true do |t|
@@ -42,7 +43,7 @@ ActiveRecord::Schema.define(:version => 20120229210403) do
     t.string   "image_url"
     t.integer  "referred_by_user_id"
     t.integer  "referred_users_id"
-    t.integer  "referral_id"
+    t.integer  "my_referral_id"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
     t.string   "referral_code"

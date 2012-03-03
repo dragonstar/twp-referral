@@ -1,4 +1,5 @@
-<h1>Listing users</h1>
+<h1>THE WAYPOINT Test Referral</h1>
+<h2>Use to augment TWP - admin - USERS view  </h2>
 
 <table>
   <tr>
@@ -6,20 +7,20 @@
     <th>Address | </th>
     <th>Image url |</th>
     <th>Referred by user | </th>
-    <th>Referred users | </th>
-    <th>Referral | </th>
+    <th>Referred | </th>
+    <th> | </th>
     <th>Your referral code</th>
     <th></th>
     <th></th>
   </tr>
 
 <% @users.each do |user| %>
-  <tr>
-    <td><%= user.name %></td>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+    <td><%= link_to user.name, user %></td>
     <td><%= user.address %></td>
     <td><%= user.image_url %></td>
     <td><%=link_to user.referred_by_user.name, user_path(user.referred_by_user) if user.referred_by_user %></td>
-    <td></td>
+    <td><%=link_to "referral", my_referral_path(user.my_referral_object) if user.my_referral_object  %></td>
     <td></td>
     <td><%= user.referral_code %></td>
     <td><%= link_to 'Show', user %></td>
